@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>password Generator</title>
-    <link rel="stylesheet" href="passwordGenrator.css">
-</head>
+    <link rel="stylesheet" href="passwordGenrator.css" />
+  </head>
 
-<body>
+  <body>
     <div class="box">
+      <h1>Password Generator</h1>
+      <h2>Password</h2>
 
-        <h1>Password Generator</h1>
-        <h2>Password</h2>
+      <div class="passwordfield">
+        <input id="display" type="text" placeholder="@example?d/5" />
+        <img
+          id="copyimg"
+          width="24"
+          height="24"
+          src="https://img.icons8.com/material-outlined/24/copy.png"
+          alt="copy"
+        />
+      </div>
 
-
-        <div class="passwordfield">
-            <input id="display" type="text" placeholder="@example?d/5">
-            <img onclick="copyPassword()" id="copyimg" width="24" height="24"
-                src="https://img.icons8.com/material-outlined/24/copy.png" alt="copy" />
-
-        </div>
-
-
-        <button onclick="GeneratePassword();" id="btn">Generate password</button>
-
-
+      <button id="btn">Generate password</button>
     </div>
     <script src="password-gen.js"></script>
-
-</body>
-
+  </body>
 </html>
