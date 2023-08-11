@@ -1,34 +1,25 @@
-
 var result = document.getElementById("display");
 
 
-// password generator function
+document.getElementById("btn").addEventListener("click", function () {
+  var arr = [
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "abcdefghijklmnopqrstuvwxyz",
+    "123456789",
+    "#$%&()*+,-./:;<=>?@[]^_`{|}~",
+  ];
+  var all = arr[0] + arr[1] + arr[2] + arr[3];
 
-function GeneratePassword() {
+  var password = [];
+  let passwordLength = 12; // max password length
 
-    var arr = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "123456789", "#$%&()*+,-./:;<=>?@[\]^_`{|}~"];
-    var all = arr[0] + arr[1] + arr[2] + arr[3];
+  while (passwordLength > password.length) {
+    password.push(all[Math.floor(Math.random() * all.length)]);
+  }
+  result.value = password.join(""); // join() to remove coma from array
+});
 
-
-    var password = [];
-    let passwordLength = 12; // max password length
-
-
-    while (passwordLength > password.length) {
-        password.push(all[Math.floor(Math.random() * all.length)]);
-
-
-
-    }
-    result.value = password.join(''); // join() to remove coma from array
-
-
-}
-function copyPassword() {
-    result.select();
-    document.execCommand("copy");
-
-
-
-
-}
+document.getElementById("copyimg").addEventListener("click", function () {
+  result.select();
+  document.execCommand("copy");
+});
